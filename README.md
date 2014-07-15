@@ -4,6 +4,7 @@ An IPython Notebook profile with a few bells and whistles taken out (and others 
 
 You can read more about [IPython configuration](http://ipython.org/ipython-doc/dev/config/intro.html) for how to create a new profile.
 
+# Start hacking
 
 To test running this profile, you can either clone the repo into your `~/.ipython` directory like so:
 

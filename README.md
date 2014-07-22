@@ -1,36 +1,51 @@
 [![Stories in Ready](https://badge.waffle.io/ivanov/ipython-trainingwheels.png?label=ready&title=Ready)](https://waffle.io/ivanov/ipython-trainingwheels)
 # IPython Training Wheels
 
-An IPython Notebook profile with a few bells and whistles taken out (and others
-added).
-
-You can read more about [IPython configuration](http://ipython.org/ipython-doc/dev/config/intro.html)
-for how to create a new profile.
+This repository contains an alternatve IPython Notebook profile
+with a few bells and whistles taken out of the default profile 
+(with some other features added).  
 
 ### Mozilla Science Lab Global Summer Sprint
 
 Help us push forward on this project as part of [Mozilla Science Lab Global
-Sprint](https://etherpad.mozilla.org/sciencelab-2014summersprint-ipython-novice-profile).
+Sprint](https://etherpad.mozilla.org/sciencelab-2014summersprint-ipython-novice-profile).  
+Install the profile as described below, check the issue list, and start hacking.  
 
+You can read more about [IPython configuration](http://ipython.org/ipython-doc/dev/config/intro.html)
+for how to create a new profile.  The default template for the notebook (for reference) 
+can be found [here](https://github.com/ipython/ipython/blob/master/IPython/html/templates/notebook.html).  
+Most customizations in the profile are found in `custom/custom.js`.  
 
-### Start hacking
+### What is an IPython Notebook profile?  
 
-To test running this profile, you can either clone the repo into your
-`~/.ipython` directory like so:
+IPython Notebook comes with a set of a default configurations that 
+can be modified.  The notebook normally loads with the default 
+profile; loading the notebook with a different profile will enable the 
+set of configurations described in that profile.  Profiles are typically stored 
+in The IPython directory, but you can also keep a profile in the current 
+working directory.  
+
+### Using this Profile
+
+To store this profile in your IPython directory, clone this repostory 
+into your `~/.ipython` directory using the commands: 
 
     cd ~/.ipython
     git clone https://github.com/ivanov/ipython-trainingwheels.git profile_swc
 
-
-Thereafter, just run `ipython --profile=swc`
+Thereafter, just run `ipython notebook --profile=swc` in order to use the training-wheels
+profile with the notebook.  
 
 Alternatively, you can clone this repository wherever you want, and then just
-specify the path to it like so:
+specify the location in order to use the profile.  To do so, use the following commands:
 
     git clone https://github.com/ivanov/ipython-trainingwheels.git /path/to/some/dir
     ipython notebook --profile-dir=/path/to/some/dir
 
+To return to using the default profile, use the command
 
+	ipython notebook --profile=default
+	
 ### Did it work?
 
 We've added visual element to help you verify that you are running this profile,

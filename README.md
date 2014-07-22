@@ -1,9 +1,13 @@
 [![Stories in Ready](https://badge.waffle.io/ivanov/ipython-trainingwheels.png?label=ready&title=Ready)](https://waffle.io/ivanov/ipython-trainingwheels)
 # IPython Training Wheels
 
-This repository contains an alternatve IPython Notebook profile
+This repository contains an alternative IPython Notebook profile
 with a few bells and whistles taken out of the default profile 
-(with some other features added).  
+(with some other features added).  To see the kinds of features we're adding,
+see [the standard
+imports button](https://github.com/ivanov/ipython-trainingwheels/pull/12).
+
+![](https://cloud.githubusercontent.com/assets/118211/3665994/e24c8be4-11eb-11e4-856d-2506249ff261.png)
 
 ### Mozilla Science Lab Global Summer Sprint
 

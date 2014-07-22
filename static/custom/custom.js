@@ -16,4 +16,15 @@ $([IPython.events]).on('notebook_loaded.Notebook', function(){
         '<i class="icon-external-link menu-icon pull-right"></i>',
         ' Software Carpentry</a> </li>',
         ].join("\n"));
+	
+	$([
+		'<li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">SWC</a>',
+        '<ul id="SWC_menu" class="dropdown-menu">',
+        '<li id="training_wheels"',
+        'title="IPython Training Wheels">',
+        '<a href="http://github.com/ivanov/ipython-trainingwheels">IPython Training Wheels</a></li>',
+		'</ul>',
+		'</li>',
+        ].join("\n")).insertAfter($('#help_menu').parent());
+		
 });

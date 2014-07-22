@@ -27,6 +27,7 @@ function sys_info() {
     var cell = IPython.notebook.insert_cell_at_index('code', 0);
     cell.set_text(system_info);
     IPython.notebook.select(0);
+    IPython.notebook.execute_cell();
 
     console.log("system information");
 

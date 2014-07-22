@@ -1,3 +1,4 @@
+[![Stories in Ready](https://badge.waffle.io/ivanov/ipython-trainingwheels.png?label=ready&title=Ready)](https://waffle.io/ivanov/ipython-trainingwheels)
 # IPython Training Wheels
 
 An IPython Notebook profile with a few bells and whistles taken out (and others

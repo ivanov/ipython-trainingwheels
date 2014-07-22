@@ -1,5 +1,5 @@
 
-standar_imports = [
+standard_imports = [
 		'import os',
         'import sys',
         'import numpy as np',
@@ -16,7 +16,7 @@ system_info = [
 		
 function std_imports() {
     var cell = IPython.notebook.insert_cell_at_index('code', 0);
-    cell.set_text(standar_imports);
+    cell.set_text(standard_imports);
     IPython.notebook.select(0);
 
     console.log("standard imports");

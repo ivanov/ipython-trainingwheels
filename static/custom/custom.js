@@ -11,9 +11,20 @@ $([IPython.events]).on('notebook_loaded.Notebook', function(){
     $('#help_menu').append([
         '<li class="divider"></li>',
         '<li id="SWC" title="Software Carpentry Website">',
-        '<a href="http://software-carpentry.org/" target="_blank" ',
-        'title="Software Carpentry Webiste">',
+        '<a href="http://software-carpentry.org/" target="_blank"',
+        'title="Software Carpentry Website">',
         '<i class="icon-external-link menu-icon pull-right"></i>',
         ' Software Carpentry</a> </li>',
         ].join("\n"));
+	
+	$([
+		'<li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">Training Wheels</a>',
+        '<ul id="training_wheels" class="dropdown-menu">',
+        '<li id="training_wheels"',
+        'title="IPython Training Wheels">',
+        '<a href="http://github.com/ivanov/ipython-trainingwheels">IPython Training Wheels</a></li>',
+		'</ul>',
+		'</li>',
+        ].join("\n")).insertAfter($('#help_menu').parent());
+
 });

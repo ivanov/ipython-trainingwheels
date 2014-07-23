@@ -5,14 +5,14 @@ standard_imports = [
         'import numpy as np',
         'import matplotlib.pyplot as plt',
 		'# these imports can be changed in IPython Training Wheels',
-        ].join("\n")
+        ].join("\n");
 
 system_info = [
 		'# these commands will produce a list of information about',
 		'# your computer that you can use for troubleshooting or other purposes',
 		'import IPython',
 		'print IPython.sys_info()',
-		].join("\n")
+		].join("\n");
 		
 function std_imports() {
     var cell = IPython.notebook.insert_cell_at_index('code', 0);
@@ -31,6 +31,20 @@ function sys_info() {
 
     console.log("system information");
 
+}
+
+function loud_command_switches() {
+    $('<div id="wheels_mode" style="  position:fixed; bottom:0; left:0; font-weight:bold" class="indicator_area border-box-sizing pull-right">'
+            + '<a href="#" title="This is an extra indicator for what mode you are in. Click here to see the keyboard shortcuts"> COMMAND&nbsp;MODE</a></div>')
+        .click(function() { $('#keyboard_shortcuts').click() })
+        .insertAfter($('#kernel_indicator'));
+    $([IPython.events]).on('command_mode.Cell', function () {
+        $('#wheels_mode a').html("COMMAND&nbsp;MODE")
+
+        ;});
+    $([IPython.events]).on('edit_mode.Cell', function () {
+$('#wheels_mode a').html("--&nbsp;EDITING&nbsp;--");
+        ;});
 }
 
 $([IPython.events]).on('notebook_loaded.Notebook', function(){
@@ -68,4 +82,5 @@ $([IPython.events]).on('notebook_loaded.Notebook', function(){
 		'</li>',
         ].join("\n")).insertAfter($('#help_menu').parent());
 
+    loud_command_switches();
 });

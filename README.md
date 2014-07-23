@@ -58,7 +58,24 @@ like this:
 
 ![](/images/header.png)
 
-Also, the Help menu in the Notebook should have extra entries ("Training Wheels
+The Help menu in the Notebook should have extra entries ("Training Wheels
 Help" and "Software Carpentry"), like this:
 
 ![](/images/help_menu.png)
+
+There will be an extra "Training Wheels" top level menu:
+
+![](/images/top_menu.png)
+
+### Other features:
+
+* ""Standard imports": create a cell with canned imports from the training
+  wheels menu.
+
+![](https://cloud.githubusercontent.com/assets/118211/3665994/e24c8be4-11eb-11e4-856d-2506249ff261.png)
+
+* "System information": create and execute a cell that reports basic information
+  about the user's machine (version of OS, Python, IPython, etc)
+
+* A textual mode inidicator (for displaying IPython's Command and Edit modes).
+  Clicking on it brings up the keyboard shortcuts.

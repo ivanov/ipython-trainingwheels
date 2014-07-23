@@ -53,7 +53,7 @@ To return to using the default profile, use the command
 ### Did it work?
 
 We've added visual element to help you verify that you are running this profile,
-The top of the Notebook will be "Software Carpentry Blue" as opposed to white,
+The top of the Notebook will be "Software Carpentry Grey" as opposed to white,
 like this:
 
 ![](/images/header.png)

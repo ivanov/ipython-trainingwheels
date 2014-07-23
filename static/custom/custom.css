@@ -2,3 +2,11 @@
     background-color: #d6d6d6; 
     color: #2e3a8c;
 }
+
+div.wheels_mode_indicator {
+    position:fixed;
+    bottom:0;
+    left:0;
+    font-weight:bold;
+    font-size:120%;
+}

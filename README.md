@@ -46,10 +46,6 @@ specify the location in order to use the profile.  To do so, use the following c
     git clone https://github.com/ivanov/ipython-trainingwheels.git /path/to/some/dir
     ipython notebook --profile-dir=/path/to/some/dir
 
-To return to using the default profile, use the command
-
-	ipython notebook --profile=default
-	
 ### Did it work?
 
 We've added visual element to help you verify that you are running this profile,
@@ -69,7 +65,7 @@ There will be an extra "Training Wheels" top level menu:
 
 ### Other features:
 
-* ""Standard imports": create a cell with canned imports from the training
+* "Standard imports": create a cell with canned imports from the training
   wheels menu.
 
 ![](https://cloud.githubusercontent.com/assets/118211/3665994/e24c8be4-11eb-11e4-856d-2506249ff261.png)
@@ -77,5 +73,5 @@ There will be an extra "Training Wheels" top level menu:
 * "System information": create and execute a cell that reports basic information
   about the user's machine (version of OS, Python, IPython, etc)
 
-* A textual mode inidicator (for displaying IPython's Command and Edit modes).
+* A textual mode indicator (for displaying IPython's Command and Edit modes).
   Clicking on it brings up the keyboard shortcuts.

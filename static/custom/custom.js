@@ -34,7 +34,7 @@ function sys_info() {
 }
 
 function loud_command_switches() {
-    $('<div id="wheels_mode" style="  position:fixed; bottom:0; left:0; font-weight:bold" class="indicator_area border-box-sizing pull-right">'
+    $('<div id="wheels_mode" class="border-box-sizing indicator_area wheels_mode_indicator">'
             + '<a href="#" title="This is an extra indicator for what mode you are in. Click here to see the keyboard shortcuts"> COMMAND&nbsp;MODE</a></div>')
         .click(function() { $('#keyboard_shortcuts').click() })
         .insertAfter($('#kernel_indicator'));

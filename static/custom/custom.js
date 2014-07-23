@@ -1,3 +1,10 @@
+standard_imports_comments = [
+        '## SWC Standard Imports',
+        '### [*os*](https://docs.python.org/2/library/os.html) \n This allows you to easily interact with the operating system, eg to navigate the file system.',
+        '### [*sys*](https://docs.python.org/2/library/sys.html) \n The system library lets you interact with the command line.',
+        '### [*numpy*](http://www.numpy.org/) \n is the standard library for numerical and scientific computing in python. It is usually abbreviated *np*.',
+        '### [*matplotlib.pyplot*](http://matplotlib.org/) \n is a plotting library that works very well with *numpy*. It is usually abbreviated *plt*.',
+        ].join("\n\n");
 
 standard_imports = [
 		'import os',
@@ -13,11 +20,17 @@ system_info = [
 		'import IPython',
 		'print IPython.sys_info()',
 		].join("\n");
-		
+
 function std_imports() {
-    var cell = IPython.notebook.insert_cell_at_index('code', 0);
-    cell.set_text(standard_imports);
+    var pre_cell = IPython.notebook.insert_cell_at_index('markdown', 0);
+    pre_cell.set_text(standard_imports_comments);
     IPython.notebook.select(0);
+    IPython.notebook.execute_cell();
+
+    var cell = IPython.notebook.insert_cell_at_index('code', 1);
+    cell.set_text(standard_imports);
+
+    IPython.notebook.select(1);
 
     console.log("standard imports");
 

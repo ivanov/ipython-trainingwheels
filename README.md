@@ -23,10 +23,9 @@ Most customizations in the profile are found in `custom/custom.js`.
 ### What is an IPython Notebook profile?  
 
 IPython Notebook comes with a set of a default configurations that 
-can be modified.  The notebook normally loads with the default 
-profile; loading the notebook with a different profile will enable the 
-set of configurations described in that profile.  Profiles are typically stored 
-in The IPython directory, but you can also keep a profile in the current 
+can be modified. Loading the notebook with a different profile will enable a 
+different set of configurations as described in that profile.  Profiles are 
+typically stored in The IPython directory, but you can also keep a profile in the current 
 working directory.  
 
 ### Using this Profile

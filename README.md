@@ -65,9 +65,8 @@ There will be an extra "Training Wheels" top level menu:
 ### Other features:
 
 * "Standard imports": create a cell with canned imports from the training
-  wheels menu.
-
-![](https://cloud.githubusercontent.com/assets/118211/3665994/e24c8be4-11eb-11e4-856d-2506249ff261.png)
+  wheels menu, along with a markdown cell above it that has links and a
+  description of what each of the imports does.
 
 * "System information": create and execute a cell that reports basic information
   about the user's machine (version of OS, Python, IPython, etc)

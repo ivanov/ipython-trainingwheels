@@ -23,10 +23,9 @@ Most customizations in the profile are found in `custom/custom.js`.
 ### What is an IPython Notebook profile?  
 
 IPython Notebook comes with a set of a default configurations that 
-can be modified.  The notebook normally loads with the default 
-profile; loading the notebook with a different profile will enable the 
-set of configurations described in that profile.  Profiles are typically stored 
-in The IPython directory, but you can also keep a profile in the current 
+can be modified. Loading the notebook with a different profile will enable a 
+different set of configurations as described in that profile.  Profiles are 
+typically stored in The IPython directory, but you can also keep a profile in the current 
 working directory.  
 
 ### Using this Profile
@@ -46,10 +45,6 @@ specify the location in order to use the profile.  To do so, use the following c
     git clone https://github.com/ivanov/ipython-trainingwheels.git /path/to/some/dir
     ipython notebook --profile-dir=/path/to/some/dir
 
-To return to using the default profile, use the command
-
-	ipython notebook --profile=default
-	
 ### Did it work?
 
 We've added visual element to help you verify that you are running this profile,
@@ -58,7 +53,23 @@ like this:
 
 ![](/images/header.png)
 
-Also, the Help menu in the Notebook should have extra entries ("Training Wheels
+The Help menu in the Notebook should have extra entries ("Training Wheels
 Help" and "Software Carpentry"), like this:
 
 ![](/images/help_menu.png)
+
+There will be an extra "Training Wheels" top level menu:
+
+![](/images/top_menu.png)
+
+### Other features:
+
+* "Standard imports": create a cell with canned imports from the training
+  wheels menu, along with a markdown cell above it that has links and a
+  description of what each of the imports does.
+
+* "System information": create and execute a cell that reports basic information
+  about the user's machine (version of OS, Python, IPython, etc)
+
+* A textual mode indicator (for displaying IPython's Command and Edit modes).
+  Clicking on it brings up the keyboard shortcuts.

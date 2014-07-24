@@ -53,12 +53,11 @@ function loud_command_switches() {
         .click(function() { $('#keyboard_shortcuts').click() })
         .insertAfter($('#kernel_indicator'));
     $([IPython.events]).on('command_mode.Cell', function () {
-        $('#wheels_mode a').html("COMMAND&nbsp;MODE")
-
-        ;});
+        $('#wheels_mode a').html("COMMAND&nbsp;MODE") ;
+    });
     $([IPython.events]).on('edit_mode.Cell', function () {
-$('#wheels_mode a').html("--&nbsp;EDITING&nbsp;--");
-        ;});
+        $('#wheels_mode a').html("--&nbsp;EDITING&nbsp;--");
+    });
 }
 
 $([IPython.events]).on('notebook_loaded.Notebook', function(){

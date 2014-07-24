@@ -24,6 +24,7 @@ system_info = [
 function std_imports() {
     var pre_cell = IPython.notebook.insert_cell_at_index('markdown', 0);
     pre_cell.set_text(standard_imports_comments);
+    pre_cell.rendered = false; // XXX: workaround for IPython bug #6197
     IPython.notebook.select(0);
     IPython.notebook.execute_cell();
 

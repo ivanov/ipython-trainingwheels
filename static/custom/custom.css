@@ -1,11 +1,8 @@
 #header {
     background-color: #d6d6d6; 
     color: #2e3a8c;
+    	background-image: url("https://raw.githubusercontent.com/drlabratory/ipython-trainingwheels/logo_switch/images/ipynblogo-bkg.png")
     }
-}
-
-#ipython_notebook.nav.brand.pull-left {
-	background-image: url("https://raw.githubusercontent.com/drlabratory/ipython-trainingwheels/logo_switch/images/ipynblogo-bkg.png")
 }
 
 div.wheels_mode_indicator {

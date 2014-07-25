@@ -22,28 +22,36 @@ system_info = [
 		].join("\n");
 
 function std_imports() {
-    var pre_cell = IPython.notebook.insert_cell_at_index('markdown', 0);
-    pre_cell.set_text(standard_imports_comments);
-    pre_cell.rendered = false; // XXX: workaround for IPython bug #6197
-    IPython.notebook.select(0);
-    IPython.notebook.execute_cell();
+    if (IPython.notebook.get_cell(0).get_text() == standard_imports_comments && IPython.notebook.get_cell(1).get_text() == standard_imports) {
+        console.log("Avoided duplicate import")
+    } else {
+        var pre_cell = IPython.notebook.insert_cell_at_index('markdown', 0);
+        pre_cell.set_text(standard_imports_comments);
+        pre_cell.rendered = false; // XXX: workaround for IPython bug #6197
+        IPython.notebook.select(0);
+        IPython.notebook.execute_cell();
 
-    var cell = IPython.notebook.insert_cell_at_index('code', 1);
-    cell.set_text(standard_imports);
+        var cell = IPython.notebook.insert_cell_at_index('code', 1);
+        cell.set_text(standard_imports);                
+    
+        console.log("standard imports");
+    }
 
     IPython.notebook.select(1);
-
-    console.log("standard imports");
 
 }
 
 function sys_info() {
-    var cell = IPython.notebook.insert_cell_at_index('code', 0);
-    cell.set_text(system_info);
-    IPython.notebook.select(0);
-    IPython.notebook.execute_cell();
-
-    console.log("system information");
+    if (IPython.notebook.get_cell(0).get_text() == system_info) {
+        console.log("Avoided duplicate sys_info")
+    } else {
+        var cell = IPython.notebook.insert_cell_at_index('code', 0);
+        cell.set_text(system_info);
+        IPython.notebook.select(0);
+        IPython.notebook.execute_cell();
+    
+        console.log("system information");
+    }
 
 }
 

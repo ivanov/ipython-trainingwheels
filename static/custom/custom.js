@@ -90,7 +90,7 @@ $([IPython.events]).on('notebook_loaded.Notebook', function(){
         '<li id="training_wheels" title="IPython Training Wheels">',
         '<a href="http://github.com/ivanov/ipython-trainingwheels" target="_blank" title="Training Wheels Website">',
         '<i class="icon-external-link menu-icon pull-right"></i>',
-        ' IPython Traning Wheels &nbsp;&nbsp;&nbsp;&nbsp;       </a> </li>',
+        ' IPython Training Wheels &nbsp;&nbsp;&nbsp;&nbsp;       </a> </li>',
 		'</ul>',
 		'</li>',
         ].join("\n")).insertAfter($('#help_menu').parent());

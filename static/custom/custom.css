@@ -1,7 +1,7 @@
 #header {
     background-color: #d6d6d6; 
     color: #2e3a8c;
-    	background-image: url("https://raw.githubusercontent.com/drlabratory/ipython-trainingwheels/logo_background/images/ipynblogo-bkg.png")
+    	background-image: url("/static/custom/images/ipynblogo-bkg.png")
     }
 }
 

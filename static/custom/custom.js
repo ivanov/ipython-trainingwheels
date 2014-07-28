@@ -22,9 +22,9 @@ system_info = [
 		].join("\n");
 
 function std_imports() {
-    if (IPython.notebook.get_cell(0).get_text() === standard_imports_comments
-            && IPython.notebook.get_cell(1).get_text() === standard_imports) {
-        console.log("Avoided duplicate import")
+    if (IPython.notebook.get_cell(0).get_text() === standard_imports_comments &&
+            IPython.notebook.get_cell(1).get_text() === standard_imports) {
+        console.log("Avoided duplicate import");
     } else {
         var pre_cell = IPython.notebook.insert_cell_at_index('markdown', 0);
         pre_cell.set_text(standard_imports_comments);
@@ -44,25 +44,25 @@ function std_imports() {
 
 function sys_info() {
     if (IPython.notebook.get_cell(0).get_text() === system_info) {
-        console.log("Avoided duplicate sys_info")
+        console.log("Avoided duplicate sys_info");
     } else {
         var cell = IPython.notebook.insert_cell_at_index('code', 0);
         cell.set_text(system_info);
-        IPython.notebook.select(0);
-        IPython.notebook.execute_cell();
     
         console.log("system information");
     }
+        IPython.notebook.select(0);
+        IPython.notebook.execute_cell();
 
 }
 
 function loud_command_switches() {
-    $('<div id="wheels_mode" class="border-box-sizing indicator_area wheels_mode_indicator">'
-            + '<a href="#" title="This is an extra indicator for what mode you are in. Click here to see the keyboard shortcuts"> COMMAND&nbsp;MODE</a></div>')
-        .click(function() { $('#keyboard_shortcuts').click() })
+    $('<div id="wheels_mode" class="border-box-sizing indicator_area wheels_mode_indicator">' +
+            '<a href="#" title="This is an extra indicator for what mode you are in. Click here to see the keyboard shortcuts"> COMMAND&nbsp;MODE</a></div>')
+        .click(function() { $('#keyboard_shortcuts').click();})
         .insertAfter($('#kernel_indicator'));
     $([IPython.events]).on('command_mode.Cell', function () {
-        $('#wheels_mode a').html("COMMAND&nbsp;MODE") ;
+        $('#wheels_mode a').html("COMMAND&nbsp;MODE");
     });
     $([IPython.events]).on('edit_mode.Cell', function () {
         $('#wheels_mode a').html("--&nbsp;EDITING&nbsp;--");

@@ -22,7 +22,8 @@ system_info = [
 		].join("\n");
 
 function std_imports() {
-    if (IPython.notebook.get_cell(0).get_text() == standard_imports_comments && IPython.notebook.get_cell(1).get_text() == standard_imports) {
+    if (IPython.notebook.get_cell(0).get_text() === standard_imports_comments
+            && IPython.notebook.get_cell(1).get_text() === standard_imports) {
         console.log("Avoided duplicate import")
     } else {
         var pre_cell = IPython.notebook.insert_cell_at_index('markdown', 0);
@@ -42,7 +43,7 @@ function std_imports() {
 }
 
 function sys_info() {
-    if (IPython.notebook.get_cell(0).get_text() == system_info) {
+    if (IPython.notebook.get_cell(0).get_text() === system_info) {
         console.log("Avoided duplicate sys_info")
     } else {
         var cell = IPython.notebook.insert_cell_at_index('code', 0);

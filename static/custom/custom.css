@@ -1,8 +1,7 @@
 #header {
     background-color: #d6d6d6; 
     color: #2e3a8c;
-    	background-image: url("/static/custom/images/ipynblogo-bkg.png")
-    }
+    background-image: url("/static/custom/images/ipynblogo-bkg.png")
 }
 
 div.wheels_mode_indicator {

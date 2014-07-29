@@ -24,6 +24,10 @@ a.swc_edit_mode {
     color: #008000;
 }
 
+i.edit_mode_icon {
+    color: #008000;
+}
+
 div.wheels_mode_indicator {
     position:fixed;
     bottom:0;

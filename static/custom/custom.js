@@ -56,6 +56,18 @@ function sys_info() {
 
 }
 
+function git_commit() {
+    var kernel = IPython.notebook.kernel;
+    var thename = window.document.getElementById("notebook_name").innerHTML;
+
+    var cell = IPython.notebook.insert_cell_at_index('code', 0);
+    cell.set_text('!git add ' + thename + '.ipynb \n!git commit ' + thename + '.ipynb -m "automatic commit from IPython notebook"');
+
+    IPython.notebook.select(0);
+    IPython.notebook.execute_cell();
+    IPython.notebook.delete_cell(0);
+}
+
 function loud_command_switches() {
     $('<div id="wheels_mode" class="border-box-sizing indicator_area wheels_mode_indicator">' +
             '<a href="#" title="This is an extra indicator for what mode you are in. Click here to see the keyboard shortcuts"> COMMAND&nbsp;MODE</a></div>')
@@ -111,6 +123,9 @@ $([IPython.events]).on('notebook_loaded.Notebook', function(){
         '<a href="#" onclick="std_imports();">Standard imports </a></li>',
 		'<li id="sys-info" title="Insert a new cell that prints system information">',
         '<a href="#" onclick="sys_info();">System information</a></li>',
+        '<li class="divider"></li>',
+        '<li id="sys-info" title="Git commit">',
+        '<a href="#" onclick="git_commit();">git commit</a></li>',
         '<li class="divider"></li>',
         '<li id="training_wheels" title="IPython Training Wheels">',
         '<a href="http://github.com/ivanov/ipython-trainingwheels" target="_blank" title="Training Wheels Website">',

@@ -60,12 +60,16 @@ function git_commit() {
     var kernel = IPython.notebook.kernel;
     var thename = window.document.getElementById("notebook_name").innerHTML;
 
+    // Missing: Popup to ask for commit message
     var cell = IPython.notebook.insert_cell_at_index('code', 0);
-    cell.set_text('!git add ' + thename + '.ipynb \n!git commit ' + thename + '.ipynb -m "automatic commit from IPython notebook"');
+    cell.set_text('!git add ' + thename + '.ipynb \n!git commit ' + thename + '.ipynb -m "Please describe commit here"');
 
+    // Todo: Find a way to execute the command without deleting the cell again, in case something goes wrong
     IPython.notebook.select(0);
     IPython.notebook.execute_cell();
     IPython.notebook.delete_cell(0);
+
+    console.log("Made a git commit")
 }
 
 function loud_command_switches() {

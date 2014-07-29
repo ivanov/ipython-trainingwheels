@@ -67,6 +67,22 @@ function loud_command_switches() {
     $([IPython.events]).on('edit_mode.Cell', function () {
         $('#wheels_mode a').html("--&nbsp;EDITING&nbsp;--");
     });
+    console.log("loaded loud mode indicator");
+}
+
+function digital_sticky_note() {
+    var h = $('#header');
+    var class_idx = 0;
+    var classes = ["swc_neutral", "swc_help", "swc_ready"];
+    h.click( function () {
+        h.removeClass(classes[class_idx]);
+        class_idx += 1;
+        class_idx %= classes.length;
+        h.addClass(classes[class_idx]);
+    });
+
+    console.log("loaded sticky notes");
+
 }
 
 $([IPython.events]).on('notebook_loaded.Notebook', function(){
@@ -105,4 +121,6 @@ $([IPython.events]).on('notebook_loaded.Notebook', function(){
         ].join("\n")).insertAfter($('#help_menu').parent());
 
     loud_command_switches();
+    
+    digital_sticky_note();
 });

@@ -1,3 +1,13 @@
+
+#header.swc_help {
+    background-color: red;
+    background-image: none;
+}
+
+#header.swc_ready {
+    background-color: darkgreen;
+    background-image: none;
+}
 #header {
     background-color: #d6d6d6; 
     color: #2e3a8c;

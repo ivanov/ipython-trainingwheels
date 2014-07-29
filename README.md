@@ -1,4 +1,4 @@
-[![Stories in Ready](https://badge.waffle.io/ivanov/ipython-trainingwheels.png?label=ready&title=Ready)](https://waffle.io/ivanov/ipython-trainingwheels)
+[Todo list on waffle &nbsp;](https://waffle.io/ivanov/ipython-trainingwheels) [![Stories in Ready](https://badge.waffle.io/ivanov/ipython-trainingwheels.png?label=ready&title=Ready)](https://waffle.io/ivanov/ipython-trainingwheels)
 # IPython Training Wheels
 
 This repository contains an alternative IPython Notebook profile

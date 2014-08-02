@@ -14,6 +14,20 @@
     background-image: url("/static/custom/images/ipynblogo-bkg.png")
 }
 
+a.swc_command_mode {
+    text-decoration: none;
+    color: #ababab;
+}
+
+a.swc_edit_mode {
+    text-decoration: none;
+    color: #008000;
+}
+
+i.edit_mode_icon {
+    color: #008000;
+}
+
 div.wheels_mode_indicator {
     position:fixed;
     bottom:0;

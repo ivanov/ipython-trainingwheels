@@ -72,14 +72,15 @@ There will be an extra "Training Wheels" top level menu:
   about the user's machine (version of OS, Python, IPython, etc)
 
 * A textual mode indicator (for displaying IPython's Command and Edit modes).
-  Clicking on it brings up the keyboard shortcuts.
+  Clicking on it brings up the keyboard shortcuts. See [screenshots in this Pull
+  Request](https://github.com/ivanov/ipython-trainingwheels/pull/41).
 
 * Digital "stickies": clicking on the top header of an open notebook will rotate
   it from being gray/neutral, red ('need help') and green ('good to go'):
 
-![2014-07-28-174050_665x70_scrot](https://cloud.githubusercontent.com/assets/118211/3729229/1cf35c1a-16b9-11e4-9f07-638ba16d4e94.png)
+  ![2014-07-28-174050_665x70_scrot](https://cloud.githubusercontent.com/assets/118211/3729229/1cf35c1a-16b9-11e4-9f07-638ba16d4e94.png)
 
-![2014-07-28-174101_638x68_scrot](https://cloud.githubusercontent.com/assets/118211/3729228/1cf1a118-16b9-11e4-98cf-95872d2368c1.png)
+  ![2014-07-28-174101_638x68_scrot](https://cloud.githubusercontent.com/assets/118211/3729228/1cf1a118-16b9-11e4-98cf-95872d2368c1.png)
 
-![2014-07-28-174110_653x68_scrot](https://cloud.githubusercontent.com/assets/118211/3729227/1cf10f8c-16b9-11e4-96d6-e81783656032.png)
+  ![2014-07-28-174110_653x68_scrot](https://cloud.githubusercontent.com/assets/118211/3729227/1cf10f8c-16b9-11e4-96d6-e81783656032.png)
 

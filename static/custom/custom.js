@@ -58,14 +58,18 @@ function sys_info() {
 
 function loud_command_switches() {
     $('<div id="wheels_mode" class="border-box-sizing indicator_area wheels_mode_indicator">' +
-            '<a href="#" title="This is an extra indicator for what mode you are in. Click here to see the keyboard shortcuts"> COMMAND&nbsp;MODE</a></div>')
+            '<a href="#" class="swc_command_mode" title="This is an extra indicator for what mode you are in. Click here to see the keyboard shortcuts">&nbsp;COMMAND</a></div>')
         .click(function() { $('#keyboard_shortcuts').click();})
         .insertAfter($('#kernel_indicator'));
     $([IPython.events]).on('command_mode.Cell', function () {
-        $('#wheels_mode a').html("COMMAND&nbsp;MODE");
+        $('#wheels_mode a').html("&nbsp;COMMAND")
+        .addClass("swc_command_mode")
+        .removeClass("swc_edit_mode");
     });
     $([IPython.events]).on('edit_mode.Cell', function () {
-        $('#wheels_mode a').html("--&nbsp;EDITING&nbsp;--");
+        $('#wheels_mode a').html("—&nbsp;EDITING&nbsp;—")
+        .addClass("swc_edit_mode")
+        .removeClass("swc_command_mode");
     });
     console.log("loaded loud mode indicator");
 }

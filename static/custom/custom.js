@@ -21,6 +21,11 @@ system_info = [
 		'print IPython.sys_info()',
 		].join("\n");
 
+import_ipythonblocks = [
+        '!pip install ipythonblocks',
+        'from ipythonblocks import BlockGrid, ImageGrid'
+        ].join("\n");
+
 function std_imports() {
     if (IPython.notebook.get_cell(0).get_text() === standard_imports_comments &&
             IPython.notebook.get_cell(1).get_text() === standard_imports) {
@@ -54,6 +59,20 @@ function sys_info() {
         IPython.notebook.select(0);
         IPython.notebook.execute_cell();
 
+}
+
+function ipythonblocks() {
+    if (IPython.notebook.get_cell(0).get_text() === import_ipythonblocks) {
+        console.log("Avoided duplicate ipythonblocks");
+    } else {
+        var cell = IPython.notebook.insert_cell_at_index('code', 0);
+        cell.set_text(import_ipythonblocks);
+
+        console.log("ipythonblocks");
+    }
+
+        IPython.notebook.select(0);
+        IPython.notebook.execute_cell();
 }
 
 function loud_command_switches() {
@@ -115,6 +134,9 @@ $([IPython.events]).on('notebook_loaded.Notebook', function(){
         '<a href="#" onclick="std_imports();">Standard imports </a></li>',
 		'<li id="sys-info" title="Insert a new cell that prints system information">',
         '<a href="#" onclick="sys_info();">System information</a></li>',
+        '<li class="divider"></li>',
+        '<li id="sys-info" title="Install and load ipythonblocks">',
+        '<a href="#" onclick="ipythonblocks();">ipythonblocks</a></li>',
         '<li class="divider"></li>',
         '<li id="training_wheels" title="IPython Training Wheels">',
         '<a href="http://github.com/ivanov/ipython-trainingwheels" target="_blank" title="Training Wheels Website">',

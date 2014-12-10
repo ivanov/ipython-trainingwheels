@@ -21,6 +21,24 @@ system_info = [
 		'print IPython.sys_info()',
 		].join("\n");
 
+inline_plotting_comments = [
+                            '#Inline plotting',
+			    'This command will enable plots created using [*matplotlib*](http://matplotlib.org/)',
+			    'to be displayed inline',
+			    ].join("\n");
+
+inline_plotting = [
+		   '%matplotlib inline',
+		   ].join("\n");
+
+pyplot_as_plt_comments = [
+			  '#This command will import pyplot from matplotlib aliasing it as "plt"'
+			  ];
+
+pyplot_as_plt = [
+	      'import matplotlib.pyplot as plt',
+	      ].join("\n");
+
 function std_imports() {
     if (IPython.notebook.get_cell(0).get_text() === standard_imports_comments &&
             IPython.notebook.get_cell(1).get_text() === standard_imports) {
@@ -56,6 +74,29 @@ function sys_info() {
 
 }
 
+
+function inline_plot() {
+    if (IPython.notebook.get_cell(0).get_text === inline_plotting_comments &&  
+        IPython.notebook.get_cell(1).get_text() === inline_plotting) {
+        console.log("Avoided duplicate import");
+    } else {
+        var pre_cell = IPython.notebook.insert_cell_at_index('markdown', 0);
+        pre_cell.set_text(inline_plotting_comments);
+        pre_cell.rendered = false; // XXX: workaround for IPython bug #6197                                                                                                                                        
+        IPython.notebook.select(0);
+        IPython.notebook.execute_cell();
+
+        var cell = IPython.notebook.insert_cell_at_index('code', 1);
+        cell.set_text(inline_plotting);
+
+        console.log("inline plotting");
+    }
+    IPython.notebook.select(0);
+    IPython.notebook.execute_cell();
+}
+
+
+
 function loud_command_switches() {
     $('<div id="wheels_mode" class="border-box-sizing indicator_area wheels_mode_indicator">' +
             '<a href="#" class="swc_command_mode" title="This is an extra indicator for what mode you are in. Click here to see the keyboard shortcuts">&nbsp;COMMAND</a></div>')
@@ -90,41 +131,44 @@ function digital_sticky_note() {
 }
 
 $([IPython.events]).on('notebook_loaded.Notebook', function(){
-
-    $([
-        '<li id="SWC" title="Training Wheels Help">',
-        '<a href="http://github.com/ivanov/ipython-trainingwheels" target="_blank" ',
-        'title="Training Wheels Help">',
-        '<i class="icon-external-link menu-icon pull-right"></i>',
-        ' Training Wheels Help</a> </li>',
-        ].join("\n")).insertAfter($("a:contains('Notebook Help')").parent());
-
-    $('#help_menu').append([
-        '<li class="divider"></li>',
-        '<li id="SWC" title="Software Carpentry Website">',
-        '<a href="http://software-carpentry.org/" target="_blank"',
-        'title="Software Carpentry Website">',
-        '<i class="icon-external-link menu-icon pull-right"></i>',
-        ' Software Carpentry</a> </li>',
-        ].join("\n"));
-	
 	$([
-		'<li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">Training Wheels</a>',
-        '<ul id="training_wheels" class="dropdown-menu">',
-        '<li id="std-imports" title="Insert a new cell with imports of commonly used modules">',
-        '<a href="#" onclick="std_imports();">Standard imports </a></li>',
-		'<li id="sys-info" title="Insert a new cell that prints system information">',
-        '<a href="#" onclick="sys_info();">System information</a></li>',
-        '<li class="divider"></li>',
-        '<li id="training_wheels" title="IPython Training Wheels">',
-        '<a href="http://github.com/ivanov/ipython-trainingwheels" target="_blank" title="Training Wheels Website">',
-        '<i class="icon-external-link menu-icon pull-right"></i>',
-        ' IPython Training Wheels &nbsp;&nbsp;&nbsp;&nbsp;       </a> </li>',
-		'</ul>',
-		'</li>',
-        ].join("\n")).insertAfter($('#help_menu').parent());
+	   '<li class="divider"></li>',
+	   '<li id="SWC" title="Software Carpentry Website">',
+	   '<a href="http://software-carpentry.org/" target="_blank"',
+	   'title="Software Carpentry Website">',
+	   '<i class="icon-external-link menu-icon pull-right"></i>',
+	   ' Software Carpentry</a> </li>',
+	   ].join("\n")).insertAfter($("a:contains('Notebook Help')").parent());
+
+
+	$([
+	   '<li id="SWC" title="Training Wheels Help">',
+	   '<a href="http://github.com/ivanov/ipython-trainingwheels" target="_blank" ',
+	   'title="Training Wheels Help">',
+	   '<i class="icon-external-link menu-icon pull-right"></i>',
+	   ' Training Wheels Help</a> </li>',
+	   ].join("\n")).insertAfter($("a:contains('Notebook Help')").parent());
+
+	console.log("Loaded Training Wheels Help");
+
+      $([
+	   '<li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">Training Wheels</a>',
+	   '<ul id="training_wheels" class="dropdown-menu">',
+	   '<li id="std-imports" title="Insert a new cell with imports of commonly used modules">',
+	   '<a href="#" onclick="std_imports();">Standard imports </a></li>',
+	   '<li id="inline-plot" title="Insert a new cell with matplotlib inline plotting command">',                                                                                                 
+	   '<a href="#" onclick="inline_plot();">Inline plotting</a></li>',                                                                                                                           
+	   '<li id="sys-info" title="Insert a new cell that prints system information">',
+	   '<a href="#" onclick="sys_info();">System information</a></li>',
+	   '<li class="divider"></li>',
+	   '<li id="training_wheels" title="IPython Training Wheels">',
+	   '<a href="http://github.com/ivanov/ipython-trainingwheels" target="_blank" title="Training Wheels Website">',
+	   '<i class="icon-external-link menu-icon pull-right"></i>',
+	   ' IPython Training Wheels &nbsp;&nbsp;&nbsp;&nbsp;       </a> </li>',
+	   '</ul>',
+	   '</li>',
+	   ].join("\n")).insertAfter($('#help_menu').parent());
 
     loud_command_switches();
-    
     digital_sticky_note();
 });

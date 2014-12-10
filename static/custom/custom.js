@@ -22,8 +22,9 @@ system_info = [
 		].join("\n");
 
 inline_plotting_comments = [
-			    '#This command will enable plots created using matplotlib',
-			    '#to be displayed inline',
+                            '#Inline plotting',
+			    'This command will enable plots created using [*matplotlib*](http://matplotlib.org/)',
+			    'to be displayed inline',
 			    ].join("\n");
 
 inline_plotting = [
